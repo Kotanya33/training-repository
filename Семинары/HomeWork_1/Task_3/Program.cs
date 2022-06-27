@@ -1,12 +1,9 @@
 ﻿int num;
-int del;
 
 Console.Write("Введите число ");
 num = Convert.ToInt32(Console.ReadLine());
 
-del = num / 2;
-
-if(del * 2 == num) 
+if(num % 2 == 0) 
 {
 Console.WriteLine("четное");
 }
