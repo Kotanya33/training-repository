@@ -27,9 +27,10 @@ King(a1, b1, a2, b2);
 /*
 int Cutlet(int k, int m, int n)
 {
-    int series = m / k;
-    if(m % k > 0) series++;
-    int time = n * series * 2;
+    int series = n * 2 / k;
+    if(n * 2 % k > 0) series++;
+    if(series < 2 && n > 0) series = 2;
+    int time = m * series;
     return time;
 }
 Console.Write("k = ");
@@ -41,4 +42,3 @@ int n = Convert.ToInt32(Console.ReadLine());
 int time = Cutlet(k, m, n);
 Console.WriteLine(time);
 */
-
