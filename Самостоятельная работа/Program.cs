@@ -5,7 +5,7 @@
 /*
 void King(int a1, int b1, int a2, int b2)
 {
-    if((a1 == a2 || a1 == (a2 -1) || a1 == (a2 + 1)) && (b1 == b2 || b1 == (b2 -1) || b1 == (b2 + 1)))
+    if((a2 <= a1 +1 && a2 >= a1 - 1) && (b2 <= b1 +1 && b2 >= b1 - 1))
         Console.WriteLine("Да");
     else
         Console.WriteLine("Нет");
