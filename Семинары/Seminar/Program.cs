@@ -193,3 +193,82 @@ ShowArray(array1);
 int result = Interval(array1, min, max);
 Console.WriteLine(result);
 */
+
+// Напишите программу, которая перевернёт одномерный массив 
+// (последний элемент будет на первом месте, а первый - на последнем и т.д.)
+int[] ReverseArray(int[] array)
+{
+    for(int i = 0, j = array.Length - 1; i < j; i++, j--)
+    {
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
+}
+/*
+int[] myArray = {3, 5, 1, 8, 2, 9, 4};
+myArray = ReverseArray(myArray);
+ShowArray(myArray);
+*/
+
+//Напишите программу, которая будет преобразовывать десятичное число в двоичное.
+string ChangeDigitSystem(int num)
+{
+    string resultNumber = string.Empty;
+    while(num > 0)
+    {
+        resultNumber = num % 2 + resultNumber;
+        num /= 2; // num = num / 2;
+    }
+    return resultNumber;
+}
+// Console.WriteLine(ChangeDigitSystem(18));
+
+// Напишите программу, которая принимает на вход три числа и проверяет, 
+// может ли существовать треугольник с сторонами такой длины.
+void Tr(int a, int b, int c)
+{
+    if (a < b + c && b < a + c && c < a + b)
+        Console.WriteLine("да");
+    else
+        Console.WriteLine("нет");
+}
+/*
+Console.Write("Введите a " );
+int a = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите b " );
+int b = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите c " );
+int c = Convert.ToInt32(Console.ReadLine());
+Tr(a, b, c);
+*/
+
+bool Tr1(int a, int b, int c)
+{
+    if(a < b + c && b < a + c && c < a + b) return true;
+    else return false;
+}
+// Console.WriteLine(Tr1(1,2,2));
+
+
+// Не используя рекурсию, выведите первые N чисел Фибоначчи. 
+// Первые два числа Фибоначчи: 0 и 1.
+int [] Fibonacci(int n)
+{
+    
+    int[] newArray = new int[n];
+    Console.WriteLine("Creating array here: ");
+    newArray[0] = 0;
+    newArray[1] = 1;
+    for(int i = 2; i < n; i++)
+    {
+        newArray[i] = newArray[i - 1] + newArray[ i - 2];
+    }
+    return newArray;
+}
+/*
+Console.Write("Введите число ");
+int num = Convert.ToInt32(Console.ReadLine());
+ShowArray(Fibonacci(num));
+*/
