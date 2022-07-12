@@ -12,12 +12,12 @@ int HowManyPositive(int m)
     Console.WriteLine();
     return result;
 }
-/*
+
 Console.WriteLine("Сколько чисел хотите ввести?");
 int m = Convert.ToInt32(Console.ReadLine());
 int positive = HowManyPositive(m);
 Console.WriteLine($"Положительных чисел {positive}");
-*/
+
 
 // Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями 
 // y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
