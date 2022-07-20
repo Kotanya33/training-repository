@@ -19,17 +19,17 @@ void Show2dDoubleArray(double[,] array)
     }
 }
 
-Console.Write("Input number of rows: ");
-int m = Convert.ToInt32(Console.ReadLine());
-Console.Write("Input number of columns: ");
-int n = Convert.ToInt32(Console.ReadLine());
-Console.Write("Input min possible value: ");
-int min = Convert.ToInt32(Console.ReadLine());
-Console.Write("Input max possible value: ");
-int max = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Input number of rows: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Input number of columns: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Input min possible value: ");
+// int min = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Input max possible value: ");
+// int max = Convert.ToInt32(Console.ReadLine());
 
-double[,] myArray = CreateRandom2dDoubleArray(m,n,min,max);
-Show2dDoubleArray(myArray);
+// double[,] myArray = CreateRandom2dDoubleArray(m,n,min,max);
+// Show2dDoubleArray(myArray);
 
 //! Напишите программу, которая на вход принимает позиции элемента в двумерном массиве,
 //! и возвращает значение этого элемента или же указание, что такого элемента нет.
@@ -42,11 +42,11 @@ void ElementValue(double[,] array, int i, int j)
         Console.WriteLine("Такого элемента нет");
 }
 
-Console.Write("Input number of rows: ");
-int x = Convert.ToInt32(Console.ReadLine());
-Console.Write("Input number of columns: ");
-int y = Convert.ToInt32(Console.ReadLine());
-ElementValue(myArray, x, y);
+// Console.Write("Input number of rows: ");
+// int x = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Input number of columns: ");
+// int y = Convert.ToInt32(Console.ReadLine());
+// ElementValue(myArray, x, y);
 
 //! Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
 
@@ -82,16 +82,16 @@ void ArithmeticalMeanOfColumn(int[,] array)
     }
 }
 
-Console.Write("Input number of rows: ");
-int m = Convert.ToInt32(Console.ReadLine());
-Console.Write("Input number of columns: ");
-int n = Convert.ToInt32(Console.ReadLine());
-Console.Write("Input min possible value: ");
-int min = Convert.ToInt32(Console.ReadLine());
-Console.Write("Input max possible value: ");
-int max = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Input number of rows: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Input number of columns: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Input min possible value: ");
+// int min = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Input max possible value: ");
+// int max = Convert.ToInt32(Console.ReadLine());
 
-int[,] myArray = CreateRandom2DArray(m,n,min,max);
-Show2DArray(myArray);
-Console.WriteLine();
-ArithmeticalMeanOfColumn(myArray);
+// int[,] myArray = CreateRandom2DArray(m,n,min,max);
+// Show2DArray(myArray);
+// Console.WriteLine();
+// ArithmeticalMeanOfColumn(myArray);
