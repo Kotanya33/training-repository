@@ -4,12 +4,12 @@
 int Koord(int x, int y)
 {
     int quad = 0;
-    if(x !=0 && y !=0)
+    if (x != 0 && y != 0)
     {
-        if(x>0 && y>0) quad = 1;
-        if(x<0 && y>0) quad = 2;
-        if(x<0 && y<0) quad = 3;
-        if(x>0 && y<0) quad = 4;
+        if (x > 0 && y > 0) quad = 1;
+        if (x < 0 && y > 0) quad = 2;
+        if (x < 0 && y < 0) quad = 3;
+        if (x > 0 && y < 0) quad = 4;
     }
     return quad;
 }
@@ -28,9 +28,9 @@ int Koord(int x, int y)
 void Quad(int n)
 {
     int count = 1;
-    while(count <= n)
+    while (count <= n)
     {
-        int proisv = count*count;
+        int proisv = count * count;
         count++;
         Console.WriteLine(proisv);
     }
@@ -47,7 +47,7 @@ int Kolich(int num)
 {
     int result = 1;
     int i = 1;
-    while(num / i > 10)
+    while (num / i > 10)
     {
         i = i * 10;
         result++;
@@ -65,7 +65,7 @@ int Kolich(int num)
 int Proisv(int N)
 {
     int result = 1;
-    for(int i = 1; i <= N; i++)
+    for (int i = 1; i <= N; i++)
         result = result * i;
     return result;
 }
@@ -80,7 +80,7 @@ int Proisv(int N)
 int Step(int a, int b)
 {
     int result = 1;
-    for(int i = 1; i <= b; i++)
+    for (int i = 1; i <= b; i++)
         result = result * a;
     return result;
 }
@@ -388,10 +388,10 @@ int findDiagSum(int[,] array)
 //! которая поменяет местами первую и последнюю строку массива.
 int[,] FirstLastRows(int[,] array)
 {
-    for(int j = 0; j < array.GetLength(1); j++)
+    for (int j = 0; j < array.GetLength(1); j++)
     {
         int temp = array[0, j];
-        array[0,j] = array[array.GetLength(0) - 1, j];
+        array[0, j] = array[array.GetLength(0) - 1, j];
         array[array.GetLength(0) - 1, j] = temp;
     }
     return array;
@@ -416,18 +416,18 @@ int[,] FirstLastRows(int[,] array)
 //! программа должна вывести сообщение для пользователя.
 int[,] Reverse2dArray(int[,] array)
 {
-    if(array.GetLength(0) != array.GetLength(1))
+    if (array.GetLength(0) != array.GetLength(1))
     {
         Console.WriteLine("Number of rows and columns is not the same!");
         return array;
     }
 
-    for(int i = 0; i < array.GetLength(0) - 1; i++)
-        for(int j = i + 1; j < array.GetLength(1); j++)
+    for (int i = 0; i < array.GetLength(0) - 1; i++)
+        for (int j = i + 1; j < array.GetLength(1); j++)
         {
-            int temp = array[i,j];
-            array[i,j] = array[j,i];
-            array[j,i] = temp;
+            int temp = array[i, j];
+            array[i, j] = array[j, i];
+            array[j, i] = temp;
         }
     return array;
 }
@@ -455,16 +455,16 @@ int[,] Cut2dArray(int[,] array)
     for (int i = 0; i < array.GetLength(0); i++)
         for (int j = 1; j < array.GetLength(1); j++)
         {
-            if(array[i,j] < array[iMin, jMin])
+            if (array[i, j] < array[iMin, jMin])
             {
                 iMin = i;
                 jMin = j;
             }
         }
-    for(int j = 0; j < array.GetLength(1); j++)
-        array[iMin,j] = 0;
-    for(int i = 0; i < array.GetLength(0); i++)
-        array[i,jMin] = 0;
+    for (int j = 0; j < array.GetLength(1); j++)
+        array[iMin, j] = 0;
+    for (int i = 0; i < array.GetLength(0); i++)
+        array[i, jMin] = 0;
     return array;
 }
 
@@ -482,3 +482,52 @@ int[,] Cut2dArray(int[,] array)
 // Console.WriteLine();
 // myArray = Cut2dArray(myArray);
 // Show2DArray(myArray);
+
+
+//? РЕКУРСИЯ
+
+//! Задайте значение N. Напишите программу, которая выведет 
+//! все натуральные числа в промежутке от 1 до N.
+
+void ShowNums(int n)
+{
+    if (n > 1)
+        ShowNums(n - 1);
+    Console.Write(n + " ");
+}
+
+//ShowNums(5);
+
+//! Напишите программу, которая будет принимать на вход число 
+//! и возвращать сумму его цифр.
+
+int SumOfDigits(int n)
+{
+    if (n >= 10)
+    {
+        return n % 10 + SumOfDigits(n / 10);
+    }
+    else return n;
+}
+
+//Console.WriteLine(SumOfDigits(12345));
+
+//! Задайте значения M и N. Напишите программу, которая
+//! выведет все натуральные числа в промежутке от M до N.
+void ShowInterval(int m, int n)
+{
+    if (n != m)
+        ShowInterval(m, n - 1);
+    Console.Write(n + " ");
+}
+//ShowInterval(4,10);
+
+//! Напишите программу, которая на вход принимает два числа
+//! A и B, и возводит число А в целую степень B с помощью рекурсии.
+int Exponentiation(int a, int b)
+{
+    if(b > 1)
+        return a * Exponentiation(a, b - 1);
+    return a;
+}
+//Console.WriteLine(Exponentiation(2,4));
